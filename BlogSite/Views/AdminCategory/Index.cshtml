@@ -1,0 +1,30 @@
+﻿@using EntityLayer.Concrete
+@model List<Category>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>NAME</th>
+        <th>EXPLANATİON</th>
+        <th>STATUS</th>
+        <th>DELETE</th>
+        <th>UPDATE</th>
+    </tr>
+
+    @foreach(var item in Model)
+   {
+       <tr>
+               <td>@item.CategoryId</td>
+               <td>@item.CategoryName</td>
+               <td>@item.CategoryExplanation</td>
+               <td>@item.CategoryStatus</td> 
+               <td><a href="/AdminCategory/DeleteCategory/@item.CategoryId" class="btn btn-outline-danger">DELETE</a></td>
+               <td><a href="/AdminCategory/UpdateCategory/@item.CategoryId" class="btn btn-outline-success">UPDATE</a></td>
+       </tr>
+   }
+</table>
+

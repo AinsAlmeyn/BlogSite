@@ -1,0 +1,3 @@
+﻿* View Component ile Blog/Index ve ReadBlog/Index dosya yollarına right-side eklemek.
+* Kayıt işlemi yapmak
+* Identity kullanarak admin panelini yetkiye özel yapmak

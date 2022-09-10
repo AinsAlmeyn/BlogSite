@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    @await Html.PartialAsync("/Views/AdminPartials/Header.cshtml")
+    <body>
+    @await Html.PartialAsync("/Views/AdminPartials/Navbar.cshtml")
+        <div id="layoutSidenav">
+            <div id="layoutSidenav_nav">
+            @await Html.PartialAsync("/Views/AdminPartials/Sidenavbar.cshtml")
+            </div>
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid px-4">
+                        <br />
+                        @RenderBody()
+                    </div>
+                </main>
+            @await Html.PartialAsync("/Views/AdminPartials/Footer.cshtml")
+
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="~/bootstrap-AdminPanel/js/scripts.js"></script>
+    </body>
+</html>

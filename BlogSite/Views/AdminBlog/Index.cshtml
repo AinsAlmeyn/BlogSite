@@ -1,0 +1,37 @@
+﻿@using EntityLayer.Concrete
+@model List<Blog>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>TITLE</th>
+        <th>CONTENT</th>
+        <th>STATUS</th>
+        <th>SUMMERY</th>
+        <th>IMAGE</th>
+        <th>DATE TIME</th>
+        <th>CATEGORY NAME</th>
+        <th>DELETE</th>
+        <th>UPDATE</th>
+    </tr>
+    @foreach(var item in Model)
+   {
+       <tr>
+               <td>@item.BlogID</td>
+               <td>@item.BlogTitle</td>
+                   <td>@item.BlogContent.Substring(0,item.BlogSummery.Substring(0,130).LastIndexOf(" "))...</td>
+               <td>@item.BlogStatus</td>
+                   <td>@item.BlogSummery.Substring(0,item.BlogSummery.Substring(0,130).LastIndexOf(" "))...</td>
+               <td>@item.BlogImage</td>
+               <td>@item.BlogDateTime</td>
+               <td>@item.Category.CategoryName</td>
+               <td><a href="/AdminBlog/DeleteBlog/@item.BlogID" class="btn btn-outline-danger">DELETE</a></td>
+                   <td><a href="/AdminBlog/UpdateBlog/@item.BlogID" class="btn btn-outline-success">UPDATE</a></td>
+       </tr>
+   }
+</table>
